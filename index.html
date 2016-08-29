@@ -532,21 +532,16 @@ function type(d) {
                         <pre><code data-trim contenteditable class="javascript hljs">
 // We have some random info
 let data = 'randomStringToCreateAnArray'.split('');
-
-// We create the root list element
-let list = d3.select('.js-container')
-                .append('ul');
                         </code></pre>
                     </section>
 
                     <section>
-                        <h2>Functions that set properties</h2>
-                        <ul>
-                            <li>.text()</li>
-                            <li>.property()</li>
-                            <li>.style()</li>
-                            <li>.attr()</li>
-                        </ul>
+                        <h2>Simplest Selection</h2>
+                        <pre><code data-trim contenteditable class="javascript hljs">
+// We create the root list element
+let list = d3.select('.js-container')
+                .append('ul');
+                        </code></pre>
                     </section>
 
                     <section>
@@ -587,6 +582,16 @@ dataJoin
                             <li>and that function gets data</li>
                             <li>from your .data()</li>
                         </aside>
+                    </section>
+
+                    <section>
+                        <h2>Functions that set properties</h2>
+                        <ul>
+                            <li>.text()</li>
+                            <li>.property()</li>
+                            <li>.style()</li>
+                            <li>.attr()</li>
+                        </ul>
                     </section>
 
                     <section>
