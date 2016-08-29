@@ -101,47 +101,6 @@ body, html{
     background-color: #eee;
     font-family: Helvetica, Tahoma, Arial;
 }
-.chart-wrapper{
-    padding: 2em;
-    background-color: white;
-}
-.chart-wrapper .events-graph{}
-
-.y-axis-group line{
-    stroke: #ccc;
-    opacity: 0.8;
-}
-
-
-/* Bar Graph*/
-.bar-graph .bar {
-  fill: steelblue;
-}
-
-.bar-graph .bar:hover {
-  fill: brown;
-}
-
-.bar-graph .axis {
-  font: 10px sans-serif;
-}
-
-.bar-graph .axis path,
-.bar-graph .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.bar-graph .x.axis path {
-  display: none;
-}
-
-
-
-
-
-
 
 
 

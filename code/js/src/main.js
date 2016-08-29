@@ -1,75 +1,38 @@
-demo.core = {
-    // D3 Reusable API Chart
-    // BarGraph
-    barGraph: {
-        selector: '.initBarGraph',
-        dataManager: null,
-        config: {
-            margin : {
-                top   : 20,
-                bottom: 30,
-                right : 20,
-                left  : 40
-            },
-            aspectWidth: 13,
-            aspectHeight: 4,
-            animation: 'linear',
-            dataURL: 'json/barGraphData.json'
-        },
-        defaultParams: function(){
-            return {};
-        },
-        init: function(idx, ele, params){
-            this.$el = ele;
-            this.requestNewData();
-            this.addEvents();
-        },
-        addEvents: function(){
-            var _this = this;
-            //Callback triggered by browser
-            window.onresize = function() {
-                _this.drawGraph();
-            };
-        },
-        drawGraph: function(){
-            var _this  = this,
-                config = this.config,
-                width  = this.$el.width(),
-                height = Math.ceil((width * config.aspectHeight) / config.aspectWidth);
+let data = 'randomStringToCreateAnArray'.split('');
 
-            this.resetGraph();
-            this.barChart = demo.graphs.barChart()
-                .width(width).height(height).margin(config.margin);
+let list = d3.select('.js-container')
+                .append('ul');
 
-            this.container = d3.select(this.$el[0])
-                .datum(this.data)
-                .call(this.barChart);
-        },
-        handleReceivedData: function(result){
-            this.data = result;
-            this.drawGraph();
-        },
-        dataCleaningFunction: function(d){
-            // Due to timestamp on JS being on miliseconds
-            d.frequency = +d.frequency;
-            d.letter = d.letter;
-        },
-        requestNewData: function(el){
-            var dataPointURL = this.config.dataURL;
+// Selection
 
-            this.dataManager = demo.graphs.dataManager();
-            this.dataManager.on('dataError', function(errorMsg){
-                console.log('error:', errorMsg);
-            });
-            this.dataManager.on('dataReady', $.proxy(this.handleReceivedData, this));
-            this.dataManager.loadJsonData(dataPointURL, this.dataCleaningFunction);
-        },
-        resetGraph: function(){
-            this.$el.find('svg').remove();
-        }
-    }
-};
+// returns a new empty selection, since the list container was empty.
+// The parent node of this selection is the list container
+let itemBinding = list.selectAll('.item')
+                      .data(data);
+// joined to an array of data, resulting in three new selections
+// that represent the three possible states: enter, update, and exit.
 
-$(function(){
-    demo.core.barGraph.init(0, $('.bar-graph'));
-});
+// Since the selection was empty, the update and exit selections are empty,
+// while the enter selection contains a placeholder for each new datum.
+
+// The update selection is returned by selection.data
+
+// Update
+itemBinding.attr('class', 'update');
+
+// Enter
+itemBinding.enter()
+  .append('li').classed('enter', true)
+.merge(itemBinding)
+  .text(function(d) { return d; });
+
+
+// Exit
+// Remove all elements as needed
+itemBinding.exit().remove();
+
+
+// data is not a property of the selection, but a property of its elements
+d3.select('.js-container').datum(2);
+
+// data is fixed on the DOM, selections can change
