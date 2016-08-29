@@ -1,5 +1,7 @@
-@import url(../../lib/font/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
+
+
 /**
  * Solarized Light theme for reveal.js.
  * Author: Achim Staebler
@@ -15,18 +17,20 @@ html * {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fdf6e3;
-  background-color: #fdf6e3; }
+  background: #1E2432;
+  background-color: #1E2432;
+}
 
 .reveal {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 36px;
   font-weight: normal;
-  color: #657b83; }
+  color: #ecf3f8;
+}
 
 ::selection {
   color: #fff;
-  background: #d33682;
+  background: #7ae2e0;
   text-shadow: none; }
 
 .reveal .slides > section, .reveal .slides > section > section {
@@ -38,9 +42,9 @@ body {
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
-  color: #586e75;
-  font-family: 'League Gothic', Impact, sans-serif;
-  font-weight: normal;
+  color: #ecf3f8;
+  font-family: 'Open Sans', Impact, sans-serif;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: uppercase;
@@ -48,10 +52,12 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 2.6em; }
 
 .reveal h2 {
-  font-size: 2.11em; }
+  font-size: 1.8em;
+  text-transform: none;
+}
 
 .reveal h3 {
   font-size: 1.55em; }
@@ -73,6 +79,11 @@ body {
 .reveal img, .reveal video, .reveal iframe {
   max-width: 95%;
   max-height: 95%; }
+
+.reveal img {
+  border: none !important;
+  box-shadow: none !important;
+}
 
 .reveal strong, .reveal b {
   font-weight: bold; }
@@ -129,10 +140,10 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
+  width: 95%;
+  font-size: 0.6em;
   margin: 20px auto;
   text-align: left;
-  font-size: 0.55em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
@@ -143,7 +154,7 @@ body {
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 20px;
   overflow: auto;
   max-height: 400px;
   word-wrap: normal;
@@ -185,7 +196,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #268bd2;
+  color: #7ae2e0;
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
@@ -262,4 +273,12 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #268bd2; }
+  color: #268bd2;
+}
+
+
+/* Overrides */
+.reveal ul li {
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
