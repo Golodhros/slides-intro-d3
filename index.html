@@ -241,7 +241,7 @@
 
                     <section>
                         <h2>Bubble charts</h2>
-                        <a target="_blank" href="http://bl.ocks.org/mbostock/4063530"><img data-src="img/bubble.png" alt="Bubble Chart" style="width: 60%;"></a>
+                        <a target="_blank" href="http://bl.ocks.org/mbostock/4063269"><img data-src="img/bubble.png" alt="Bubble Chart" style="width: 60%;"></a>
                     </section>
 
                     <section>
@@ -288,7 +288,7 @@
                         <p><a target="_blank" href="http://bl.ocks.org/mbostock/3885304">Bar chart example</a> by Mike Bostock</p>
                         <aside class="notes">
                             <ul>
-                                <li>Simplest example</li>
+                                <li>Simple chart example</li>
                                 <li>One of my first contacts with D3 was via this article</li>
                                 <li>Although there is not a lot of code, there is a lot of stuff happening here.</li>
                                 <li>Let's dive into it</li>
@@ -435,8 +435,7 @@ svg.selectAll(".bar")
                         <img src="img/mbBarChart_Fotor.jpg" height="493" width="945" alt="">
                         <aside class="notes">
                             <ul>
-                                <li>Well… it’s true, it works, and probably you could copy this code, modify it a bit and use it somewhere in your website.</li>
-                                <li>But let's be serious, who thinks this is good-quality code?</li>
+                                <li>And there we go, we have a d3 chart.</li>
                             </ul>
                         </aside>
                     </section>
@@ -516,7 +515,7 @@ function type(d) {
                     </section>
 
                     <section>
-                        <h1>Transform the DOM by selecting elements and joining to data</h1>
+                        <h2>Transform the DOM by selecting elements and joining to data</h2>
                         <aside class="notes">
                             <li>It's another approach</li>
                             <li>With jquery we accessed elments</li>
@@ -534,8 +533,8 @@ function type(d) {
                             <li class="fragment">Array of arrays of elements</li>
                         </ul>
                         <aside class="notes">
-                            <li>such as setting attributes and styles</li>
                             <li>a selection is an array of groups, and each group is an array of elements.</li>
+                            <li>such as setting attributes and styles</li>
                             <li>data is fixed on the DOM, selections can change</li>
                         </aside>
                     </section>
@@ -567,6 +566,10 @@ let dataJoin = list.selectAll('.item')
                     // data, which would be bound to a
                     // selection
                         </code></pre>
+                    </section>
+
+                    <section>
+                        <h1>Update, Enter and Exit Pattern</h1>
                         <aside class="notes">
                             <li>when we joined the selection with an array of data,</li>
                             <li>it results in three new selections</li>
@@ -577,7 +580,18 @@ let dataJoin = list.selectAll('.item')
                     </section>
 
                     <section>
-                        <h1>Update, Enter and Exit Pattern</h1>
+                        <h2>Functions that set properties</h2>
+                        <ul>
+                            <li>.text()</li>
+                            <li>.property()</li>
+                            <li>.style()</li>
+                            <li>.attr()</li>
+                        </ul>
+                        <aside class="notes">
+                            <li>each one takes a function</li>
+                            <li>and that function gets data</li>
+                            <li>from your .data()</li>
+                        </aside>
                     </section>
 
                     <section>
@@ -590,21 +604,6 @@ dataJoin
       return d.foo;
     });
                         </code></pre>
-                        <aside class="notes">
-                            <li>each one takes a function</li>
-                            <li>and that function gets data</li>
-                            <li>from your .data()</li>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>Functions that set properties</h2>
-                        <ul>
-                            <li>.text()</li>
-                            <li>.property()</li>
-                            <li>.style()</li>
-                            <li>.attr()</li>
-                        </ul>
                     </section>
 
                     <section>
@@ -635,7 +634,7 @@ dataJoin.exit().remove();
                             <li><a target="_blank" href="https://bost.ocks.org/mike/selection/#enter-update-exit">How Selections Work</a></li>
                             <li><a target="_blank" href="http://bost.ocks.org/mike/join/">Thinking with joins</a></li>
                             <li><a target="_blank" href="http://bl.ocks.org/mbostock/3808218">General Update Pattern</a></li>
-                            <li><a href="https://github.com/d3/d3-selection">API Reference</a></li>
+                            <li><a href="https://github.com/d3/d3-selection">Selection API Reference</a></li>
                         </ul>
                         <aside class="notes">
                             <li>This is by far the trickiest part of D3</li>
@@ -647,11 +646,23 @@ dataJoin.exit().remove();
 
                 <!-- Live Coding -->
                 <section>
-                    <h1>Live Coding</h1>
-                    <ul>
-                        <li><a target="_blank" href="https://codepen.io/Golodhros/pen/rLXAZw">https://codepen.io/Golodhros/pen/rLXAZw</a></li>
-                        <li><a target="_blank" href="http://codepen.io/Golodhros/pen/jAgZAj">http://codepen.io/Golodhros/pen/jAgZAj</a></li>
-                    </ul>
+                    <section>
+                        <h1>Live Coding</h1>
+                    </section>
+
+                    <section>
+                        <h2>List Example</h2>
+                        <ul>
+                            <li><a target="_blank" href="https://codepen.io/Golodhros/pen/rLXAZw">https://codepen.io/Golodhros/pen/rLXAZw</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Table Example</h2>
+                        <ul>
+                            <li><a target="_blank" href="http://codepen.io/Golodhros/pen/jAgZAj">http://codepen.io/Golodhros/pen/jAgZAj</a></li>
+                        </ul>
+                    </section>
                 </section>
 
                 <!-- Learning and Resources -->
@@ -743,9 +754,11 @@ dataJoin.exit().remove();
                         <li class="fragment">D3 is a visualization library</li>
                         <li class="fragment">You can do amazing things with it</li>
                         <li class="fragment">Data Joins are complex</li>
+                        <li class="fragment">but not too much...</li>
                     </ul>
                     <aside class="notes">
                         <ul>
+                            <li></li>
                         </ul>
                     </aside>
                 </section>
